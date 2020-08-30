@@ -1,0 +1,11 @@
+FROM node:14.9-alpine3.12
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install 
+
+# can be used or not...karena sudah di handle docker-compose
+COPY . .
+
+CMD ["npm", "start"]
